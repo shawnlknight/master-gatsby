@@ -29,6 +29,12 @@ export default {
       options: {
         hotspot: true,
       }
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      description: 'Tell us a bit about this person'
     }
   ]
 }

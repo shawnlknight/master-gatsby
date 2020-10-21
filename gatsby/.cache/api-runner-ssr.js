@@ -1,4 +1,10 @@
 var plugins = [{
+      plugin: require('/Users/Shawn.Leberknight/dev/shawn/master-gatsby/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/Users/Shawn.Leberknight/dev/shawn/master-gatsby/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"jr03rif8","dataset":"production","watchMode":true,"token":"skmUYmsOouiRcIDqOWW5rfEa1tEDKAUFGPnUI5wt5cnHswoX47AkLRedmSxaUtpo9r62NNiRo7lGkIE1UEnaG4u1xQbMy0oj4bwpKlI3PtPKiOtDefOZZ6TKMmyQbdU4IkYAMWq1q0V304fICMjyJ7WuLqOGyRV8uc6IP7honU4P7l5zypDw"},
+    },{
       plugin: require('/Users/Shawn.Leberknight/dev/shawn/master-gatsby/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]
