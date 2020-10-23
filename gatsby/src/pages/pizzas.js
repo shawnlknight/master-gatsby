@@ -18,6 +18,9 @@ export const query = graphql`
         }
         image {
           asset {
+            fixed(width: 200, height: 200) {
+              ...GatsbySanityImageFixed
+            }
             fluid(maxWidth: 400) {
               ...GatsbySanityImageFluid
             }
@@ -29,7 +32,6 @@ export const query = graphql`
 `;
 
 export default function PizzasPage({ data }) {
-  console.log(data);
   const pizzas = data.pizzas.nodes;
   return (
     <>
