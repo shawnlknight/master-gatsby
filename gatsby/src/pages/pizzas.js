@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PizzaList from '../components/PizzaList';
+import ToppingsFilter from '../components/ToppingsFilter';
 
 // Gatsby recognizes this graphql query and injects it magically into the page
 export const query = graphql`
@@ -35,6 +36,7 @@ export default function PizzasPage({ data }) {
   const pizzas = data.pizzas.nodes;
   return (
     <>
+      <ToppingsFilter />
       <PizzaList pizzas={pizzas} />
     </>
   );
