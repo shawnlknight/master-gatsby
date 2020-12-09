@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query {
@@ -43,6 +44,7 @@ const SingleBeerStyles = styled.div`
 export default function BeersPage({ data }) {
   return (
     <>
+      <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} />
       <h2 className="center" style={{ 'margin-bottom': '4rem' }}>
         We have {data.beers.nodes.length} Beers Available. Dine in Only!
       </h2>

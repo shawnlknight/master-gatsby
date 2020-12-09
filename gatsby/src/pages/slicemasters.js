@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Pagination from '../components/Pagination';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query($skip: Int = 0, $pageSize: Int = 2) {
@@ -65,6 +66,7 @@ export default function SlicemastersPage({ data, pageContext }) {
 
   return (
     <>
+      <SEO title={`Slicemasters - Page ${pageContext.currentPage || 1}`} />
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.slicemasters.totalCount}

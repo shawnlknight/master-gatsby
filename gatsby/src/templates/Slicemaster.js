@@ -2,18 +2,21 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 export default function SinglePizzaPage({ data }) {
-  console.log('data', data);
   const { person } = data;
   return (
-    <div className="center">
-      <Img fluid={person.image.asset.fluid} />
-      <h2>
-        <span className="mark">{person.name}</span>
-      </h2>
-      <p>{person.description}</p>
-    </div>
+    <>
+      <SEO title={person.name} image={person.image.asset.src} />
+      <div className="center">
+        <Img fluid={person.image.asset.fluid} />
+        <h2>
+          <span className="mark">{person.name}</span>
+        </h2>
+        <p>{person.description}</p>
+      </div>
+    </>
   );
 }
 
