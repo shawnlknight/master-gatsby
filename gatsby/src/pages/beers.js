@@ -3,23 +3,6 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
-export const query = graphql`
-  query {
-    beers: allBeer {
-      nodes {
-        id
-        name
-        price
-        image
-        rating {
-          reviews
-          average
-        }
-      }
-    }
-  }
-`;
-
 const BeersGridStyles = styled.div`
   display: grid;
   gap: 2rem;
@@ -74,3 +57,20 @@ export default function BeersPage({ data }) {
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    beers: allBeer {
+      nodes {
+        id
+        name
+        price
+        image
+        rating {
+          reviews
+          average
+        }
+      }
+    }
+  }
+`;
