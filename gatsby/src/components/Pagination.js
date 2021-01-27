@@ -40,17 +40,11 @@ export default function Pagination({
   skip,
   base,
 }) {
-  console.log('totalCount', totalCount);
-  console.log('pageSize', pageSize);
   const totalPages = Math.ceil(totalCount / pageSize);
-  console.log('currentPage', currentPage);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
   const hasNextPage = nextPage <= totalPages;
   const hasPrevPage = prevPage >= 1;
-  console.log('totalPages', totalPages);
-  console.log('hasPrevPage', hasPrevPage);
-  console.log('prevPage', prevPage);
 
   return (
     <PaginationStyles>
