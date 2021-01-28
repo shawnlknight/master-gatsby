@@ -1,2 +1,5 @@
 .cache/
 .vscode
+
+# dotenv environment variable files
+.env*
