@@ -43,7 +43,13 @@ function wait(ms = 0) {
 
 exports.handler = async (event, context) => {
   const body = JSON.parse(event.body);
-  console.log(body);
+  // Check if honeypot was filled out
+  if (body.mapleSyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'boop beep pop!' }),
+    };
+  }
   // Validate data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
 
