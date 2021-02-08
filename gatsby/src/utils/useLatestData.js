@@ -1,5 +1,20 @@
 import { useEffect, useState } from 'react';
 
+const gql = String.raw;
+
+const deets = `
+    name
+    _id
+    image {
+      asset {
+        url
+        metadata {
+          lqip
+        }
+      }
+    }
+`;
+
 export default function useLatestData() {
   // hot slices
   const [hotSlices, setHotslices] = useState();
@@ -14,15 +29,15 @@ export default function useLatestData() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: `
+        query: gql`
           query {
             StoreSettings(id: "downtown") {
               name
               slicemaster {
-                name
+                ${deets}
               }
               hotSlices {
-                name
+                ${deets}
               }
             }
           }
@@ -35,6 +50,10 @@ export default function useLatestData() {
         // Set the data to state
         setHotslices(res.data.StoreSettings.hotSlices);
         setSliceMasters(res.data.StoreSettings.slicemaster);
+      })
+      .catch((err) => {
+        console.log('ERROR');
+        console.log(err);
       });
   }, []);
   return {
