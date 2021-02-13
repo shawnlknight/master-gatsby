@@ -52,8 +52,8 @@ export default function useLatestData() {
         setSliceMasters(res.data.StoreSettings.slicemaster);
       })
       .catch((err) => {
-        console.log('ERROR');
-        console.log(err);
+        // console.log('ERROR');
+        // console.log(err);
       });
   }, []);
   return {
