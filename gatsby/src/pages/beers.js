@@ -28,7 +28,7 @@ export default function BeersPage({ data }) {
   return (
     <>
       <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} />
-      <h2 className="center" style={{ 'margin-bottom': '4rem' }}>
+      <h2 className="center" style={{ marginBottom: '4rem' }}>
         We have {data.beers.nodes.length} Beers Available. Dine in Only!
       </h2>
       <BeersGridStyles>
